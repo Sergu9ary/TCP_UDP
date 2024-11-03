@@ -138,8 +138,8 @@ func sendMessages(conn net.Conn) {
 			fmt.Println("Closing connection...")
 			return
 		}
-		if len(input) > 20480 {
-			fmt.Println("Message exceeds 20 KB, it will be split.")
+		if len(input) > 1448 {
+			fmt.Println("Message will be split.")
 		}
 		_, err := conn.Write([]byte(input))
 		if err != nil {
